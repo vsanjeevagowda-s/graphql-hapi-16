@@ -1,0 +1,93 @@
+{
+  "name": "graphql",
+  "version": "0.0.1",
+  "description": "Graphql",
+  "main": "server.js",
+  "publishConfig": {
+    "registry": "https://npmjs.itcs.hpecorp.net"
+  },
+  "engine-strict": true,
+  "engines": {
+    "node": "^5.11"
+  },
+  "scripts": {
+    "test": "lab --coverage --verbose --timeout 10000",
+    "start": "node server.js",
+    "debug": "node --debug=5858 server.js",
+    "lint": "eslint .",
+    "lint:errors": "eslint . --quiet"
+  },
+  "keywords": [
+    "api",
+    "apis",
+    "integration",
+    "rest",
+    "swagger"
+  ],
+  "author": "",
+  "addison-template": "0.18.0",
+  "license": "MIT",
+  "dependencies": {
+    "@hpe/addison-engine": "0.x",
+    "joi": "10.x",
+    "dotenv": "4.0.0"
+  },
+  "devDependencies": {
+    "lab": "14.x",
+    "code": "4.x",
+    "eslint": "4.1.1",
+    "eslint-plugin-import": "2.7.0"
+  },
+  "com_hpe": {
+    "eprid": "",
+    "ucmdb": {
+      "id": "",
+      "type": "eprid",
+      "url": "http//apate.corp.hpe.com"
+    },
+    "origin": {
+      "format": "swagger",
+      "url": "https://raw.github.hpe.com/ChangeRecords/fwd-api/master/api/docs/swagger.json",
+      "version": 2
+    },
+    "data-subject": [
+      ""
+    ],
+    "system-of-record": [
+      ""
+    ],
+    "datastore": "",
+    "access": "",
+    "native": true,
+    "addison": true,
+    "audience": [
+      ""
+    ],
+    "app-context": "",
+    "scm": {
+      "team": ""
+    },
+    "registry": "",
+    "audit-policy": "",
+    "organization": "",
+    "ldap-groups-auth": [
+      ""
+    ],
+    "op-org": "",
+    "name-space": "",
+    "service-name": "",
+    "service-type": [
+      ""
+    ],
+    "service-alias": "",
+    "secret-policy": "",
+    "label": "",
+    "keywords": [
+      ""
+    ],
+    "governance-category": "",
+    "logo": "",
+    "metadata-version": "1",
+    "environment": {}
+  }
+}

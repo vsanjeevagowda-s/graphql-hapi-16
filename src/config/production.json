@@ -1,0 +1,18 @@
+{
+    "registrations": [{
+        "plugin": {
+            "register": "@hpe/entmon-metrics",
+            "options": {
+                "enableentmon": false,
+                "environment": "production"
+            }
+        }
+    }, {
+        "plugin": {
+            "register": "@hpe/entmon-registration",
+            "options": {
+                "environment": "production"
+            }
+        }
+    }]
+}

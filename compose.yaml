@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  addison-application:
+    networks:
+     - ucp-hrm
+    deploy:
+     replicas: APP_REPLICAS
+     restart_policy:
+      condition: on-failure
+      delay: 5s
+      max_attempts: 3
+      window: 120s
+     labels:
+      - APP=${APP_NAME}
+      - com.docker.ucp.access.label=${UCP_GROUP_LABEL}
+      - com.docker.ucp.mesh.http.1=external_route=http://${APP_HOSTNAME},redirect=https://${APP_HOSTNAME}
+      - com.docker.ucp.mesh.http.${APP_PORT}=external_route=sni://${APP_HOSTNAME},internal_port=${APP_PORT}
+    image: "${DOCKER_REGISTRY}/${DOCKER_IMAGE_REPO}:${DOCKER_IMAGE_TAG}"
+    ports:
+     - $APP_PORT
+    environment:
+     - APP_ENV=$APP_ENV
+     - http_proxy=$http_proxy
+     - HTTP_PROXY=$http_proxy
+     - https_proxy=$https_proxy
+     - HTTPS_PROXY=$https_proxy
+     - no_proxy=$no_proxy
+     - NO_PROXY=$no_proxy
+     - VAULT_ADDR=$VAULT_ADDR
+     - VAULT_APPLICATION_PATH=$VAULT_APPLICATION_PATH
+     - VAULT_GITHUB_TOKEN=$VAULT_GITHUB_TOKEN
+     - VAULT_SKIP_VERIFY=$VAULT_SKIP_VERIFY
+    labels:
+     - "Version=${DOCKER_IMAGE_TAG}"
+
+networks:
+  ucp-hrm:
+    external:
+      name: ucp-hrm

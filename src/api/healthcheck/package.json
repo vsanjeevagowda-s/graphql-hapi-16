@@ -1,0 +1,8 @@
+{
+  "name": "healthcheck",
+  "version": "1.0.0",
+  "description": "Healthcheck endpoint",
+  "main": "healthcheck.js",
+  "author": "addison",
+  "license": "MIT"
+}
