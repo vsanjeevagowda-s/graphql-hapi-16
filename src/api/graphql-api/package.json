@@ -1,0 +1,9 @@
+{
+  "name": "graphql-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "graphql-api.js",
+  "author": "",
+  "addison-template": "0.18.0",
+  "license": "MIT"
+}

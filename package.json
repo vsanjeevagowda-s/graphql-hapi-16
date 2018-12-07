@@ -1,5 +1,5 @@
 {
-  "name": "graphql",
+  "name": "graphql-test",
   "version": "0.0.1",
   "description": "Graphql",
   "main": "server.js",
@@ -29,8 +29,10 @@
   "license": "MIT",
   "dependencies": {
     "@hpe/addison-engine": "0.x",
-    "joi": "10.x",
-    "dotenv": "4.0.0"
+    "apollo-server-hapi": "^1.2.0",
+    "dotenv": "4.0.0",
+    "graphql": "^14.0.2",
+    "joi": "10.x"
   },
   "devDependencies": {
     "lab": "14.x",
