@@ -1,12 +1,18 @@
 const graphql = require('graphql');
 const PaintingType = require('./PaintingType');
-
+const paintings =  [{
+  id: 1,
+  name: 'sample1'
+},{
+  id: 2,
+  name: 'sample2'
+}]
 const {
   GraphQLObjectType,
   GraphQLString,
   GraphQLSchema
 } = graphql;
-debugger
+
 const RootQuery = new GraphQLObjectType({
   name: 'RootQueryType',
   fields: {
@@ -14,7 +20,8 @@ const RootQuery = new GraphQLObjectType({
       type: PaintingType,
       args: { id: { type: GraphQLString } },
       resolve(parent, args){
-
+        
+       return paintings.filter(item => item.id === parseInt(args.id))[0];
       }
     }
   }

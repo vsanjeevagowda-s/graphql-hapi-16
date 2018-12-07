@@ -1,11 +1,11 @@
 const graphql = require('graphql');
-const { GraphQLObjectType, GraphQLString } = graphql;
-debugger
+const { GraphQLObjectType, GraphQLInt } = graphql;
+
 const PaintingType = new GraphQLObjectType({
   name: 'Painting',
   fields: () => ({
-    id: { type: GraphQLString }
+    id: { type: GraphQLInt }
   })
 })
-debugger
+
 module.exports = PaintingType;

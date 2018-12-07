@@ -1,9 +1,7 @@
 const Hapi = require('hapi');
 const server = new Hapi.Server();
 const { graphqlHapi, graphiqlHapi } = require('apollo-server-hapi');
-debugger
 const schema = require('./graphql/schema');
-debugger
 server.connection({
   port: 4000,
   host: 'localhost'
